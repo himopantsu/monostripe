@@ -1,0 +1,11 @@
+discord.py == 1.2.5
+pytest-flake8
+gspread
+oauth2client
+numpy
+pandas
+datetime
+requests
+BeautifulSoup4
+glob3
+matplotlib
