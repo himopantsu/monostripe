@@ -254,7 +254,4 @@ async def on_message(message):
 		embed.add_field(name="====",value=ddd,inline=False)
 		await message.channel.send(embed=embed)
 
-loop.start()
-# botの接続と起動
-# （botアカウントのアクセストークンを入れてください）
 client.run(bot_token)
