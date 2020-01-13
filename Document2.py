@@ -62,6 +62,9 @@ async def on_message(message):
 	if message.author.bot:  # ボットのメッセージをハネる
 		return
 			
+	elif message.content == "('o')ｷｬｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww":
+		await message.channel.send(f"うるせえぞタピオカ")
+		
 	elif message.content == "!やるじゃん":
 		await message.channel.send(f"ありがとう")
 		
