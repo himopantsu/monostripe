@@ -79,10 +79,10 @@ async def on_message(message):
 		input_array = np.asarray(grayimg)
 		
 		match_result = cv2.matchTemplate(input_array,validation_array,cv2.TM_CCOEFF_NORMED)
+		print(match_result)
 		threshold = 0.9
 		loc=np.where(match_result >= threshold)
-		print(len(loc))
-		if len(loc) == 0:
+		if loc == 0:
 			return
 		else: await message.channel.send(f"あるよ")
 	
