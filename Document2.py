@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 from datetime import timedelta
 import cv2
+import io
 from PIL import Image
 
 bot_token = os.environ['DISCORD_BOT_TOKEN']
