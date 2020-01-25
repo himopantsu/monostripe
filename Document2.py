@@ -65,7 +65,23 @@ async def on_message(message):
 	"""メッセージを処理"""
 	if message.author.bot:  # ボットのメッセージをハネる
 		return
-			
+	
+	elif message.attachments:
+		headers = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",}
+		request = urllib.request.Request(url=str(messasge.attachments[0].url),headers=headers)
+		f = io.BytesIO(urllib.request.urlopen(request).read())
+		validation_img = Image.open("hontale_necklace.png")
+		img = Image.open(f)
+		validation_array = cv2.imread(validation_img,0
+		imput_array = cv2.imread(img,0)
+		match_result = cv2.matchTemplate(img,validation_array,cv2.TM_CCOEFF_NORMED)
+		threshold = 0.9
+		loc=np.where(match_result >= threshold)
+		print(loc)
+		if loc == None:
+			return
+		else: await message.channel.send(f"あるよ")
+					      
 	elif message.content == "('o')ｷｬｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww":
 		await message.channel.send(f"うるせえぞタピオカ")
 		
