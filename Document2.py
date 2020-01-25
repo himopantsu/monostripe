@@ -60,7 +60,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
 	print(message.attachments)
-	print(imutils.url_to_image(message.attachments[0].url))
+	bbbbbbbbbb = await read(message.attachments[0].url)
+	print(bbbbbbbbbb)
 	"""メッセージを処理"""
 	if message.author.bot:  # ボットのメッセージをハネる
 		return
