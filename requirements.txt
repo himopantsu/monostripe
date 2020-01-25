@@ -9,4 +9,6 @@ requests
 BeautifulSoup4
 glob3
 matplotlib
-opencv
+opencv-python
+linfontconfig1
+libxrender1
