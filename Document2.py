@@ -13,6 +13,7 @@ import requests
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 from datetime import timedelta
+import imutils
 
 bot_token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()  # 接続に使用するオブジェクト
@@ -59,7 +60,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
 	print(message.attachments)
-	print(message.attachments[0].url)
+	print(imutils.url_to_image(message.attachments[0].url))
 	"""メッセージを処理"""
 	if message.author.bot:  # ボットのメッセージをハネる
 		return
