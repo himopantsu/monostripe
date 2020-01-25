@@ -58,10 +58,7 @@ async def on_ready():
 	
 @client.event
 async def on_message(message):
-	print(message.attachments[0][2])
-	print(type(message.attachments))
-	print(len(message.attachments))
-	print(message.url)
+	print(message.attachments["url"])
 	"""メッセージを処理"""
 	if message.author.bot:  # ボットのメッセージをハネる
 		return
