@@ -82,10 +82,11 @@ async def on_message(message):
 		threshold = 0.9
 		loc=np.where(match_result >= threshold)
 		print(loc)
-		if loc == None:
+		if loc.shape[0] == 0:
 			return
 		else: await message.channel.send(f"あるよ")
-					      
+			return
+	
 	elif message.content == "('o')ｷｬｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧｧwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww":
 		await message.channel.send(f"うるせえぞタピオカ")
 		
