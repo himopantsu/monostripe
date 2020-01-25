@@ -9,5 +9,4 @@ requests
 BeautifulSoup4
 glob3
 matplotlib
-imutils
 opencv-python
