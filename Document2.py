@@ -72,7 +72,7 @@ async def on_message(message):
 		
 		validation_img = Image.open("horntale_necklace.png")
 		validation_grayimg = validation_img.convert('L')
-		validation_garray = np.asarray(validation_grayimg)
+		validation_array = np.asarray(validation_grayimg)
 		
 		img = Image.open(f)
 		grayimg = img.convert('L')
