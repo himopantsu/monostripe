@@ -73,9 +73,9 @@ async def on_message(message):
 		f = io.BytesIO(urllib.request.urlopen(request).read())
 		validation_img = Image.open("hontale_necklace.png")
 		img = Image.open(f)
-		validation_array = cv2.imread(validation_img,0
-		imput_array = cv2.imread(img,0)
-		match_result = cv2.matchTemplate(img,validation_array,cv2.TM_CCOEFF_NORMED)
+		validation_array = cv2.imread(validation_img,0)
+		input_array = cv2.imread(img,0)
+		match_result = cv2.matchTemplate(input_array,validation_array,cv2.TM_CCOEFF_NORMED)
 		threshold = 0.9
 		loc=np.where(match_result >= threshold)
 		print(loc)
