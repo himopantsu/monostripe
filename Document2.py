@@ -58,7 +58,7 @@ async def on_ready():
 	
 @client.event
 async def on_message(message):
-	print(message.attachments[url])
+	print(message.attachments[0])
 	print(type(message.attachments))
 	print(len(message.attachments))
 	print(message.url)
