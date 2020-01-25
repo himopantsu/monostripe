@@ -13,6 +13,7 @@ import requests
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
 from datetime import timedelta
+import cv2
 
 bot_token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()  # 接続に使用するオブジェクト
