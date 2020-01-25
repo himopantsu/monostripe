@@ -69,10 +69,15 @@ async def on_message(message):
 		headers = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",}
 		request = urllib.request.Request(url=str(message.attachments[0].url),headers=headers)
 		f = io.BytesIO(urllib.request.urlopen(request).read())
+		
 		validation_img = Image.open("horntale_necklace.png")
+		validation_grayimg = validation_img.convert('L')
+		validation_garray = np.asarray(validation_grayimg)
+		
 		img = Image.open(f)
-		validation_array = cv2.imread(validation_img,0)
-		input_array = cv2.imread(img,0)
+		grayimg = img.convert('L')
+		input_array = np.asarray(grayimg)
+		
 		match_result = cv2.matchTemplate(input_array,validation_array,cv2.TM_CCOEFF_NORMED)
 		threshold = 0.9
 		loc=np.where(match_result >= threshold)
