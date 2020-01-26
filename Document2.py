@@ -75,11 +75,12 @@ async def on_message(message):
 		validation_array = np.asarray(validation_grayimg)
 		
 		img = Image.open(f)
+		image_resize(800, 'image_resize2.jpg')
 		grayimg = img.convert('L')
 		input_array = np.asarray(grayimg)
 		
 		match_result = cv2.matchTemplate(input_array,validation_array,cv2.TM_CCOEFF_NORMED)
-		threshold = 0.8
+		threshold = 0.5
 		loc=np.where(match_result >= threshold)
 		print(loc)
 		if len(loc[0]) == 0:
