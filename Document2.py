@@ -79,13 +79,13 @@ async def on_message(message):
 		input_array = np.asarray(grayimg)
 		custom_cascade = cv.CascadeClassifier('cascade.xml')
 		custom_rect = custom_cascade.detectMultiScale(grayimg, scaleFactor=1.07, minNeighbors=2, minSize=(1, 1))
-		print(custom_cascade,custom_rect)
+		
 		
 		#match_result = cv2.matchTemplate(input_array,validation_array,cv2.TM_CCOEFF_NORMED)
 		#threshold = 0.5
 		#loc=np.where(match_result >= threshold)
-		print(loc)
-		if len(loc[0]) == 0:
+		
+		if len(custom_rect) == 0:
 			return
 		else: await message.channel.send(f"あるよ")
 	
